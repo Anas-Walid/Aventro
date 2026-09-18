@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Aventro – Learn Web Development</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="topnav">
+    <div class="brand">Aventro</div>
+    <div>
+            <a href="index.html">Home</a>
+      <a href="html.html">HTML</a>
+      <a href="css.html">CSS</a>
+      <a href="js.html">JavaScript</a>
+      <a href="examples.html">Examples</a>
+      <a href="flashcards.html">Flashcards</a>
+      <a href="quizzes.html">Quiz</a>
+    </div>
+  </div>
+<div class="tab">
+  <button class="tablinks" onclick="location.href='lesson-html.html'">HTML</button>
+  <button class="tablinks" onclick="location.href='lesson-css.html'">CSS</button>
+  <button class="tablinks" onclick="location.href='lesson-js.html'">JavaScript</button>
+</div>
+
+
+  <div class="layout">
+    <aside class="sidebar">
+      <h3>Learn</h3>
+<div class="ta">
+  <h3>Coming soon</h3>
+</div>
+    </aside>
+
+    <main class="content">
+      <h1>CSS Basics</h1>
+<p>HTML is the structure of every website.</p>
+<div class="code-box">
+body {<br>
+  background-color: lightblue;<br>
+}
+<br>
+h1 {<br>
+  color: white;<br>
+  text-align: center;<br>
+}
+<br>
+p {<br>
+  font-family: verdana;<br>
+}<br>
+</div>
+
+<section class="course-intro" style="margin-top: 15px; margin-bottom: 30px;">
+    <h1>Learn CSS</h1>
+
+    <p>
+        CSS (Cascading Style Sheets) is the language that makes websites look
+        beautiful. It controls colors, layouts, spacing, animations, and
+        responsiveness.
+    </p>
+
+    <p>
+        After learning CSS, you'll be able to transform plain HTML pages into
+        modern professional websites that work on desktops, tablets, and phones.
+    </p>
+
+    <div class="goal-box">
+        <h3>What You'll Learn</h3>
+        <ul>
+            <li>Selectors</li>
+            <li>Colors & Fonts</li>
+            <li>Margins & Padding</li>
+            <li>Flexbox</li>
+            <li>CSS Grid</li>
+            <li>Animations & Hover Effects</li>
+            <li>Responsive Design</li>
+        </ul>
+    </div>
+</section>
+
+<section>
+  <h1>Advanced CSS</h1>
+  <h4>Code and Learn with Aventro</h4>
+
+<div class="container">
+  <div class="cube">
+    <div class="cube-faces front">Code</div>
+    <div class="cube-faces back">and</div>
+    <div class="cube-faces right">learn</div>
+    <div class="cube-faces left">with</div>
+    <div class="cube-faces top">Aventro</div>
+    <div class="cube-faces bottom"><img src="Aventro.png" height="50px" width="50px"></div>
+  </div>
+</div>
+</section>
+    </main>
+  </div>
+  <script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+</body>
+</html>

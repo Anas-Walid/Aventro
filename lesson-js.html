@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Aventro – Learn Web Development</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="topnav">
+    <div class="brand">Aventro</div>
+    <div>
+            <a href="index.html">Home</a>
+      <a href="html.html">HTML</a>
+      <a href="css.html">CSS</a>
+      <a href="js.html">JavaScript</a>
+      <a href="examples.html">Examples</a>
+      <a href="flashcards.html">Flashcards</a>
+      <a href="quizzes.html">Quiz</a>
+    </div>
+  </div>
+<div class="tab">
+  <button class="tablinks" onclick="location.href='lesson-html.html'">HTML</button>
+  <button class="tablinks" onclick="location.href='lesson-css.html'">CSS</button>
+  <button class="tablinks" onclick="location.href='lesson-js.html'">JavaScript</button>
+</div>
+
+
+  <div class="layout">
+    <aside class="sidebar">
+      <h3>Learn</h3>
+<div class="ta">
+<h3>Coming soon</h3>
+</div>
+    </aside>
+
+    <main class="content">
+      <h1>JavaScript Basics</h1>
+<p>HTML is the structure of every website.</p>
+<div class="code-box">
+<pre>
+  <button onclick="myFunction()">Click Me!</button>
+
+<script>
+function myFunction() {
+  let x = document.getElementById("demo");
+  x.style.fontSize = "25px";
+  x.style.color = "red";
+}
+</script>
+</pre>
+</div>
+
+<section class="course-intro">
+    <h1>Learn JavaScript</h1>
+
+    <p>
+        JavaScript is the programming language of the web. It allows websites
+        to respond to user actions, update content dynamically, and create
+        interactive experiences.
+    </p>
+
+    <p>
+        In this course, you'll learn how to make websites come alive with
+        buttons, forms, animations, games, and real-world applications.
+    </p>
+
+    <div class="goal-box">
+        <h3>What You'll Learn</h3>
+        <ul>
+            <li>Variables</li>
+            <li>Functions</li>
+            <li>Conditions</li>
+            <li>Loops</li>
+            <li>DOM Manipulation</li>
+            <li>Events</li>
+            <li>APIs</li>
+        </ul>
+    </div>
+</section>
+    </main>
+  </div>
+  <script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+</body>
+</html>

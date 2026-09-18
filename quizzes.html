@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Aventro Courses – Learn Web Development</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="brand">
+        <div class="brand-logo"></div>
+        <div class="brand-name">Aventro</div>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="courses.html" class="active">Courses</a>
+        <a href="resources.html">Resources</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrapper">
+    <section class="lesson-hero">
+      <h1 class="lesson-title">Courses & tracks</h1>
+      <p class="lesson-meta">
+        Each track is project‑based. By the end, you’ll have a real website you can share.
+      </p>
+    </section>
+
+    <section class="section">
+      <div class="grid-3">
+        <article class="card">
+          <div class="card-label">Beginner</div>
+          <h3 class="card-title">HTML Foundations</h3>
+          <p class="card-text">
+            Learn how browsers read HTML, how to structure pages, and how to use semantic tags.
+          </p>
+          <ul>
+            <li><a href="lesson-html.html">Intro to HTML</a></li>
+            <li>Headings, paragraphs, lists</li>
+            <li>Links, images, and basic layout</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="card-label">Beginner–Intermediate</div>
+          <h3 class="card-title">CSS Layout & Design</h3>
+          <p class="card-text">
+            Move from default browser styles to custom layouts, colors, and responsive design.
+          </p>
+          <ul>
+            <li><a href="lesson-css.html">Intro to CSS</a></li>
+            <li>Box model, flexbox, grid</li>
+            <li>Color systems & typography</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="card-label">Intermediate</div>
+          <h3 class="card-title">JavaScript Essentials</h3>
+          <p class="card-text">
+            Understand variables, functions, events, and how to connect JS to your HTML.
+          </p>
+          <ul>
+            <li><a href="lesson-js.html">Intro to JavaScript</a></li>
+            <li>DOM manipulation</li>
+            <li>Simple interactive components</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Aventro · Courses · © <span id="year"></span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

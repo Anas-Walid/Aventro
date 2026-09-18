@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Aventro – Learn Web Development</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="topnav">
+    <div class="brand">Aventro</div>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="pages/html.html">HTML</a>
+      <a href="pages/css.html">CSS</a>
+      <a href="pages/js.html">JavaScript</a>
+      <a href="pages/examples.html">Examples</a>
+      <a href="pages/reference.html">Reference</a>
+      <a href="pages/quiz.html">Quiz</a>
+    </div>
+  </div>
+<div class="tab">
+  <button class="tablinks" onclick="location.href='lesson-html.html'">HTML</button>
+  <button class="tablinks" onclick="location.href='lesson-css.html'">CSS</button>
+  <button class="tablinks" onclick="location.href='lesson-js.html'">JavaScript</button>
+</div>
+
+
+  <div class="layout">
+    <aside class="sidebar">
+      <h3>Learn</h3>
+<div class="ta">
+      <a href="index.html">Home</a>
+      <a href="pages/html.html">HTML</a>
+      <a href="pages/css.html">CSS</a>
+      <a href="pages/js.html">JavaScript</a>
+      <a href="pages/examples.html">Examples</a>
+      <a href="pages/flashcards.html">Flashcards</a>
+      <a href="pages/quizzes.html">Quiz</a>
+</div>
+    </aside>
+
+    <main class="content">
+      <h1>Code Websites</h1>
+<p>HTML is the structure of every website.</p>
+<div class="code-box">
+&lt;!DOCTYPE html&gt;
+<br>
+&lt;html&gt;
+<br>
+&lt;head&gt;<br>&lt;title&gt;My Page&lt;/title&gt;<br>&lt;/head&gt;
+&lt;body&gt;<br>&lt;h1&gt;Hello&lt;/h1&gt;<br>&lt;/body&gt;
+&lt;/html&gt;
+</div>
+
+      <h1>Welcome to Aventro</h1>
+      <p>Learn coding step by step with interactive examples.</p>
+      <button onclick="alert('Hello Anas 🚀')"><svg width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.566 13a2.566 2.566 0 1 1 0 5.131 2.566 2.566 0 0 1 0-5.131Zm6.414 0a2.566 2.566 0 1 1 0 5.131 2.566 2.566 0 0 1 0-5.131ZM25 15.566a2.566 2.566 0 1 0-5.131 0 2.566 2.566 0 0 0 5.131 0Z" fill="currentColor"></path></svg></button>
+    </main>
+  </div>
+  <script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+</body>
+</html>

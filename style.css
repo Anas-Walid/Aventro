@@ -1,0 +1,306 @@
+:root {
+  --orange: #f47b20;
+  --orange-dark: #d45b0a;
+  --bg: #0f172a;
+  --bg-panel: #1f2937;
+  --text: #f9fafb;
+  --text-muted: #9ca3af;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.topnav {
+  background: var(--bg-panel);
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--orange);
+}
+
+.topnav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  margin-left: 1rem;
+}
+
+.topnav a:hover {
+  color: var(--orange);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  height: calc(100vh - 60px);
+}
+
+.sidebar {
+  background: var(--bg-panel);
+  padding: 1rem;
+  border-right: 2px solid var(--orange-dark);
+}
+
+.sidebar h3 {
+  color: var(--orange);
+}
+
+.sidebar a {
+  display: block;
+  padding: 0.4rem 0;
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+  color: var(--orange);
+}
+
+.content {
+  padding: 2rem;
+}
+
+.content h1 {
+  color: var(--orange);
+}
+
+.code-box {
+  background: #020617;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 0.5px solid #fff;
+  font-family: Consolas, monospace;
+  overflow-x: auto;
+  line-height: 1.6;
+  color: #e5e7eb;
+}
+
+button {
+  padding: 10px 20px;
+  background: #fff;
+  color: var(--orange);
+  border: none;
+  border-radius: 5px;
+  transition: transform 0.4ms ease;
+}
+
+button:hover {
+  transform: translateY(4);
+}
+
+svg {
+  transition: 1s ease;
+}
+
+svg:hover {
+  transform: scale(1);
+}
+
+div::selection {
+    color: #f47b20;
+    background-color: #1f2937;
+}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+.display-block {
+  display: block;
+}
+
+pre[class*="language-"] {
+  border-radius: 12px;
+  padding: 20px;
+  font-size: 15px;
+  background: #1e1e1e;
+}
+
+
+code {
+  font-family: "Consolas", monospace;
+}
+
+.course-intro{
+  background:#1f2937;
+  padding:30px;
+  border-radius:15px;
+  margin-bottom:30px;
+}
+
+ 
+
+.course-intro h1{
+  color:#f47b20;
+  font-size:42px;
+  margin-bottom:15px;
+}
+
+ 
+
+.course-intro p{
+  color:#e5e7eb;
+  line-height:1.8;
+  margin-bottom:15px;
+}
+
+ 
+
+.goal-box{
+  background:#111827;
+  border-left:5px solid #f47b20;
+  padding:20px;
+  margin-top:20px;
+  border-radius:10px;
+}
+
+ 
+
+.goal-box h3{
+  color:#f47b20;
+}
+
+ 
+
+.goal-box ul{
+  padding-left:20px;
+}
+
+ 
+
+.goal-box li{
+  margin:10px 0;
+}
+
+.flashcard{
+  background:#1f2937;
+  padding:20px;
+  border-radius:12px;
+  margin:20px 0;
+  cursor:pointer;
+}
+
+.front{
+  font-weight:bold;
+  color:#f47b20;
+}
+
+.back{
+  margin-top:10px;
+  color:white;
+}
+
+.container {
+  width: 200px;
+  height: 250px;
+  border: 1px solid lightgray;
+  perspective: 600px;
+}
+
+.flash-card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.face {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+  text-align: center;
+}
+
+.front {
+  background: black;
+  color: #f47b20;
+}
+
+.back {
+  background: #f47b20;
+  color: black;
+  transform: rotateY(180deg);
+}
+
+.container:hover .flash-card {
+  transform: rotateY(180deg);
+}
+
+.cube-container {
+  width: 200px;
+  height: 200px;
+  margin: 100px auto;
+  perspective: 600px;
+}
+
+.cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: spin 12s infinite linear;  
+}
+
+.cube-faces {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border: 2px solid white;
+  line-height: 200px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  background: #f47b20;
+}
+
+.front  { transform: rotateY(  0deg) translateZ(100px); }
+.back   { transform: rotateY(180deg) translateZ(100px); }
+.left   { transform: rotateY(-90deg) translateZ(100px); }
+.right  { transform: rotateY( 90deg) translateZ(100px); }
+.top    { transform: rotateX( 90deg) translateZ(100px); }
+.bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+@keyframes spin {
+  from { transform: rotateX(0deg) rotateY(0deg); }
+  to   { transform: rotateX(360deg) rotateY(360deg); }
+}
