@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Avento – Learn Web Development</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="Screenshot__156_-removebg-preview.png">
+</head>
+<body>
+  <div class="topnav">
+    <div class="brand"><img src="Aventro-removebg-preview.png" alt="" height="30px" width="30px" style="margin-right: 5px;" onclick="location.reload()"> Avento</div>
+    <div>
+    </div>
+  </div>
+<div class="tab">
+  <button class="tablinks" onclick="location.href='lesson-html.html'">HTML</button>
+  <button class="tablinks" onclick="location.href='lesson-css.html'">CSS</button>
+  <button class="tablinks" onclick="location.href='lesson-js.html'">JavaScript</button>
+</div>
+
+
+  <div class="layout">
+    <aside class="sidebar">
+      <h3>Learn</h3>
+<div class="ta">
+      <a href="index.html">Home</a>
+      <a href="lesson-html.html">HTML</a>
+      <a href="lesson-css.html">CSS</a>
+      <a href="lesson-js.html">JavaScript</a>
+      <a href="flashcards.html">Flashcards</a>
+      <a href="resources.html">Resources</a>
+      <a href="quizzes.html">Quiz</a>
+</div>
+    </aside>
+
+    <main class="content">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Code Sandbox</title>
+  <style>
+    :root {
+      --panel: #101b2d;
+      --panel-2: #15263f;
+      --text: #edf5ff;
+      --muted: #a7b7d0;
+      --primary: #7c5cff;
+      --primary-2: #f47b20;
+      --border: rgba(255,255,255,0.08);
+      --shadow: 0 20px 45px rgba(0,0,0,0.22);
+    }
+
+
+    .sandbox {
+      max-width: 1200px;
+      margin: 0 auto;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+      background: rgba(16, 27, 45, 0.95);
+      box-shadow: var(--shadow);
+    }
+
+    .tabs {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 16px;
+      background: rgba(255,255,255,0.02);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .tab {
+      padding: 8px 14px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .tab.active {
+      background: rgba(124, 92, 255, 0.12);
+      border-color: rgba(124, 92, 255, 0.32);
+      color: white;
+    }
+
+    .workspace {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 540px;
+    }
+
+    .editor {
+      border-right: 1px solid var(--border);
+      background: #0a1422;
+    }
+
+    .editor textarea {
+      display: none;
+      width: 100%;
+      min-height: 470px;
+      padding: 18px;
+      border: 0;
+      outline: none;
+      resize: vertical;
+      background: #0a1422;
+      color: #eaf4ff;
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+
+    .editor textarea.active {
+      display: block;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      padding: 12px 14px 16px;
+      background: rgba(255,255,255,0.02);
+      border-top: 1px solid var(--border);
+    }
+
+    .btn {
+      padding: 10px 18px;
+      border-radius: 10px;
+      border: none;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      color: white;
+    }
+
+    .btn.secondary {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      color: white;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .preview {
+      display: flex;
+      flex-direction: column;
+      background: #f4f7fb;
+    }
+
+    .preview-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      background: #edf2fa;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      color: #1f2d3d;
+      font-weight: 700;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 470px;
+      border: 0;
+      background: white;
+    }
+
+    @media (max-width: 900px) {
+      .workspace {
+        grid-template-columns: 1fr;
+      }
+
+      .editor {
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="sandbox">
+    <div class="tabs">
+      <button class="tab active" data-tab="html">HTML</button>
+      <button class="tab" data-tab="css">CSS</button>
+      <button class="tab" data-tab="js">JavaScript</button>
+    </div>
+
+    <div class="workspace">
+      <div class="editor">
+        <textarea id="htmlCode" class="active" spellcheck="false"><div class="card">
+  <h2>Build with confidence</h2>
+  <p>Create a modern website using HTML, CSS, and JavaScript.</p>
+  <button onclick="changeColor()">Click me</button>
+</div></textarea>
+
+        <textarea id="cssCode" spellcheck="false">body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #101827, #1d2a3d);
+  font-family: Arial, sans-serif;
+}
+
+.card {
+  width: 420px;
+  padding: 32px;
+  border-radius: 24px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.25);
+  color: white;
+  text-align: center;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 2rem;
+}
+
+p {
+  color: #d9e2f2;
+  line-height: 1.6;
+}
+
+button {
+  background: linear-gradient(135deg, #7c5cff, #20c997);
+  border: none;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+}</textarea>
+
+        <textarea id="jsCode" spellcheck="false">function changeColor() {
+  const card = document.querySelector('.card');
+  const colors = ['#7c5cff', '#20c997', '#ff9f43', '#ff5ea8'];
+  card.style.background = colors[Math.floor(Math.random() * colors.length)];
+  card.style.transform = 'scale(1.03)';
+  setTimeout(() => card.style.transform = 'scale(1)', 180);
+}</textarea>
+
+        <div class="actions">
+          <button class="btn secondary" id="resetBtn">Reset</button>
+          <button class="btn primary" id="runBtn">Run</button>
+        </div>
+      </div>
+
+      <div class="preview">
+        <div class="preview-top">
+          <span>Live Preview</span>
+          <span id="status">Ready</span>
+        </div>
+        <iframe id="previewFrame" title="Live preview"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const tabs = document.querySelectorAll('.tab');
+    const editors = {
+      html: document.getElementById('htmlCode'),
+      css: document.getElementById('cssCode'),
+      js: document.getElementById('jsCode')
+    };
+
+    const previewFrame = document.getElementById('previewFrame');
+    const status = document.getElementById('status');
+
+    function updatePreview() {
+      const html = editors.html.value;
+      const css = editors.css.value;
+      const js = editors.js.value;
+
+      const doc = `
+        <!doctype html>
+        <html>
+          <head>
+            <style>${css}</style>
+          </head>
+          <body>
+            ${html}
+            <script>
+              try {
+                ${js}
+              } catch (err) {
+                const p = document.createElement('p');
+                p.style.color = 'red';
+                p.textContent = 'JavaScript error: ' + err.message;
+                document.body.appendChild(p);
+              }
+            <\/script>
+          </body>
+        </html>
+      `;
+
+      previewFrame.srcdoc = doc;
+      status.textContent = 'Updated';
+    }
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const selected = tab.dataset.tab;
+        tabs.forEach(btn => btn.classList.toggle('active', btn === tab));
+        Object.keys(editors).forEach(key => {
+          editors[key].classList.toggle('active', key === selected);
+        });
+      });
+    });
+
+    document.getElementById('runBtn').addEventListener('click', updatePreview);
+    document.getElementById('resetBtn').addEventListener('click', () => {
+      editors.html.value = `<div class="card">
+  <h2>Build with confidence</h2>
+  <p>Create a modern website using HTML, CSS, and JavaScript.</p>
+  <button onclick="changeColor()">Click me</button>
+</div>`;
+      editors.css.value = `body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #101827, #1d2a3d);
+  font-family: Arial, sans-serif;
+}
+
+.card {
+  width: 420px;
+  padding: 32px;
+  border-radius: 24px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.25);
+  color: white;
+  text-align: center;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 2rem;
+}
+
+p {
+  color: #d9e2f2;
+  line-height: 1.6;
+}
+
+button {
+  background: linear-gradient(135deg, #7c5cff, #20c997);
+  border: none;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+}`;
+      editors.js.value = `function changeColor() {
+  const card = document.querySelector('.card');
+  const colors = ['#7c5cff', '#20c997', '#ff9f43', '#ff5ea8'];
+  card.style.background = colors[Math.floor(Math.random() * colors.length)];
+  card.style.transform = 'scale(1.03)';
+  setTimeout(() => card.style.transform = 'scale(1)', 180);
+}`;
+      updatePreview();
+    });
+
+    updatePreview();
+  </script>
+    </main>
+  </div>
+  <script src="script.js">
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+</body>
+</html>

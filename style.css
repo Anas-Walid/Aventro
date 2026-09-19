@@ -108,7 +108,7 @@ div::selection {
 /* Style the tab */
 .tab {
   overflow: hidden;
-  border: 1px solid #ccc;
+  border: none;
   background-color: #f1f1f1;
 }
 
