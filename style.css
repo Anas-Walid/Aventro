@@ -5,6 +5,7 @@
   --bg-panel: #1f2937;
   --text: #f9fafb;
   --text-muted: #9ca3af;
+  --border: rgba(255,255,255,0.08);
 }
 
 body {
@@ -109,7 +110,7 @@ div::selection {
 .tab {
   overflow: hidden;
   border: none;
-  background-color: #f1f1f1;
+  background-color: #1f2937;
 }
 
 /* Style the buttons inside the tab */
@@ -122,6 +123,9 @@ div::selection {
   padding: 14px 16px;
   transition: 0.3s;
   font-size: 17px;
+  background: #1f2937;
+  border: 1px solid var(--border);
+  color: #f47b20;
 }
 
 /* Change background color of buttons on hover */
@@ -138,8 +142,8 @@ div::selection {
 .tabcontent {
   display: none;
   padding: 6px 12px;
-  border: 1px solid #ccc;
   border-top: none;
+  background-color: #1e1e1e;
 }
 
 .display-block {
