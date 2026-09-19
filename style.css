@@ -381,3 +381,16 @@ form {
 .quiz-section button:hover{
     background:#f47b20;
 }
+
+.counter-buttons {
+  background-color: #d45b0a;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 5px 25px #d45b0a;
+}
+
+.counter-buttons:hover {
+  box-shadow: 0px 10px 25px #d45b0a;
+}
