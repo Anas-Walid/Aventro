@@ -1,82 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Aventro Courses – Learn Web Development</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>Avento – Learn Web Development</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="Screenshot__156_-removebg-preview.png">
 </head>
 <body>
-  <header>
-    <div class="navbar">
-      <div class="brand">
-        <div class="brand-logo"></div>
-        <div class="brand-name">Aventro</div>
-      </div>
-      <nav class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="courses.html" class="active">Courses</a>
-        <a href="resources.html">Resources</a>
-      </nav>
+  <div class="topnav">
+    <div class="brand"><img src="Aventro-removebg-preview.png" alt="" height="30px" width="30px" style="margin-right: 5px;" onclick="location.reload()"> Avento</div>
+    <div>
     </div>
-  </header>
+  </div>
+<div class="tab">
+  <button class="tablinks" onclick="location.href='lesson-html.html'">HTML</button>
+  <button class="tablinks" onclick="location.href='lesson-css.html'">CSS</button>
+  <button class="tablinks" onclick="location.href='lesson-js.html'">JavaScript</button>
+</div>
 
-  <main class="wrapper">
-    <section class="lesson-hero">
-      <h1 class="lesson-title">Courses & tracks</h1>
-      <p class="lesson-meta">
-        Each track is project‑based. By the end, you’ll have a real website you can share.
-      </p>
-    </section>
 
-    <section class="section">
-      <div class="grid-3">
-        <article class="card">
-          <div class="card-label">Beginner</div>
-          <h3 class="card-title">HTML Foundations</h3>
-          <p class="card-text">
-            Learn how browsers read HTML, how to structure pages, and how to use semantic tags.
-          </p>
-          <ul>
-            <li><a href="lesson-html.html">Intro to HTML</a></li>
-            <li>Headings, paragraphs, lists</li>
-            <li>Links, images, and basic layout</li>
-          </ul>
-        </article>
+  <div class="layout">
+    <aside class="sidebar">
+      <h3>Learn</h3>
+<div class="ta">
+      <a href="index.html">Home</a>
+      <a href="lesson-html.html">HTML</a>
+      <a href="lesson-css.html">CSS</a>
+      <a href="lesson-js.html">JavaScript</a>
+      <a href="flashcards.html">Flashcards</a>
+      <a href="resources.html">Resources</a>
+      <a href="quizzes.html">Quiz</a>
+</div>
+    </aside>
 
-        <article class="card">
-          <div class="card-label">Beginner–Intermediate</div>
-          <h3 class="card-title">CSS Layout & Design</h3>
-          <p class="card-text">
-            Move from default browser styles to custom layouts, colors, and responsive design.
-          </p>
-          <ul>
-            <li><a href="lesson-css.html">Intro to CSS</a></li>
-            <li>Box model, flexbox, grid</li>
-            <li>Color systems & typography</li>
-          </ul>
-        </article>
+    <main class="content">
 
-        <article class="card">
-          <div class="card-label">Intermediate</div>
-          <h3 class="card-title">JavaScript Essentials</h3>
-          <p class="card-text">
-            Understand variables, functions, events, and how to connect JS to your HTML.
-          </p>
-          <ul>
-            <li><a href="lesson-js.html">Intro to JavaScript</a></li>
-            <li>DOM manipulation</li>
-            <li>Simple interactive components</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-  </main>
+<section class="quiz-section">
+    <h2>Quick Quiz</h2>
 
-  <footer>
-    Aventro · Courses · © <span id="year"></span>
-  </footer>
+    <p>Which HTML tag creates the largest heading?</p>
 
-  <script src="script.js"></script>
+    <button onclick="checkAnswer(this, false)">&lt;p&gt;</button>
+    <button onclick="checkAnswer(this, true)">&lt;h1&gt;</button>
+    <button onclick="checkAnswer(this, false)">&lt;head&gt;</button>
+    <button onclick="checkAnswer(this, false)">&lt;title&gt;</button>
+
+    <p class="result"></p>
+</section>
+<section class="quiz-section">
+    <h2>Quick Quiz</h2>
+
+    <p>Which CSS property changes text color?</p>
+
+    <button onclick="checkAnswer(this, false)">font-size</button>
+    <button onclick="checkAnswer(this, false)">background</button>
+    <button onclick="checkAnswer(this, true)">color</button>
+    <button onclick="checkAnswer(this, false)">padding</button>
+
+    <p class="result"></p>
+</section>
+<section class="quiz-section">
+    <h2>Quick Quiz</h2>
+
+    <p>Which language adds interactivity to websites?</p>
+
+    <button onclick="checkAnswer(this, false)">HTML</button>
+    <button onclick="checkAnswer(this, false)">CSS</button>
+    <button onclick="checkAnswer(this, true)">JavaScript</button>
+    <button onclick="checkAnswer(this, false)">SQL</button>
+
+    <p class="result"></p>
+</section>
+    </main>
+  </div>
+  <script src="script.js">
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
 </body>
 </html>

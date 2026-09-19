@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Aventro – Learn Web Development</title>
+  <title>Avento – Learn Web Development</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="Screenshot__156_-removebg-preview.png">
 </head>
 <body>
   <div class="topnav">
-    <div class="brand">Aventro</div>
+    <div class="brand"> <img src="Aventro-removebg-preview.png" alt="" height="30px" width="30px" style="margin-right: 5px;" onclick="location.reload()"> Avento</div>
     <div>
             <a href="index.html">Home</a>
-      <a href="html.html">HTML</a>
-      <a href="css.html">CSS</a>
-      <a href="js.html">JavaScript</a>
-      <a href="examples.html">Examples</a>
+      <a href="lesson-html.html">HTML</a>
+      <a href="lesson-css.html">CSS</a>
+      <a href="lesson-js.html">JavaScript</a>
+      <a href="resources.html">Resources</a>
       <a href="flashcards.html">Flashcards</a>
       <a href="quizzes.html">Quiz</a>
     </div>
@@ -38,19 +39,15 @@
 <p>HTML is the structure of every website.</p>
 <div class="code-box">
 <pre>
-  <button onclick="myFunction()">Click Me!</button>
+&lt;script&gt;
 
-<script>
-function myFunction() {
-  let x = document.getElementById("demo");
-  x.style.fontSize = "25px";
-  x.style.color = "red";
-}
-</script>
+alert("Hello");
+
+&lt;/script&gt;
 </pre>
 </div>
 
-<section class="course-intro">
+<section class="course-intro" style="margin-top: 20px;">
     <h1>Learn JavaScript</h1>
 
     <p>
@@ -64,7 +61,7 @@ function myFunction() {
         buttons, forms, animations, games, and real-world applications.
     </p>
 
-    <div class="goal-box">
+    <div class="goal-box" style="margin-top: 20px;">
         <h3>What You'll Learn</h3>
         <ul>
             <li>Variables</li>
@@ -79,7 +76,7 @@ function myFunction() {
 </section>
     </main>
   </div>
-  <script>
+  <script src="script.js">
 function openCity(evt, cityName) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");

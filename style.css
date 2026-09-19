@@ -291,7 +291,11 @@ code {
   font-weight: bold;
   color: white;
   background: #f47b20;
+
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
+
 
 .front  { transform: rotateY(  0deg) translateZ(100px); }
 .back   { transform: rotateY(180deg) translateZ(100px); }
@@ -303,4 +307,77 @@ code {
 @keyframes spin {
   from { transform: rotateX(0deg) rotateY(0deg); }
   to   { transform: rotateX(360deg) rotateY(360deg); }
+}
+
+
+form input {
+  background-color: black;
+  color: #9ca3af;
+  border: 0.5px #ccc solid;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+form input:focus {
+  box-shadow: 0px 5px 25px #d45b0a;
+}
+
+form label {
+  font-weight: 600;
+  color: white;
+  display: block;
+  margin-bottom: 1px;
+}
+
+form {
+  padding: 50px;
+  background-color: #1f2937;
+  border-radius: 10px;
+  box-shadow: 0px 5px 25px #d45b0a;
+}
+
+#submit {
+  width: 100%;
+  padding: 20px;
+  background-color: #f47b20;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+
+#submit:hover {
+  box-shadow: 0px 5px 25px #d45b0a;
+}
+
+.quiz-section{
+    margin-top:40px;
+    background:#1f2937;
+    padding:25px;
+    border-radius:15px;
+}
+
+.quiz-section h2{
+    color:#f47b20;
+}
+
+.quiz-section button{
+    display:block;
+    width:100%;
+    margin:10px 0;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    background:#374151;
+    color:white;
+    text-align:left;
+}
+
+.quiz-section button:hover{
+    background:#f47b20;
 }
