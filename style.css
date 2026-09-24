@@ -399,3 +399,30 @@ form {
 .counter-buttons:hover {
   box-shadow: 0px 10px 25px #d45b0a;
 }
+
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+  }
+  
+#bg {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+
+  .effect {
+    height: 50px;
+    width: 200px;
+    background-color: black;
+    color: white;
+    border-radius: 50px;
+    font-size: 20px;
+    border-top: #ccc 0.5px solid;
+    border-top: #000 0.5px solid;
+  }
