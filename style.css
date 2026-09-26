@@ -217,7 +217,7 @@ code {
   background:#1f2937;
   padding:20px;
   border-radius:12px;
-  margin-top: 20px;
+  margin-top: 40px;
   cursor: pointer;
 }
 
@@ -266,7 +266,7 @@ code {
   transform: rotateY(180deg);
 }
 
-.container:hover .container:click .flash-card {
+.container:hover  .flash-card {
   transform: rotateY(180deg);
 }
 
