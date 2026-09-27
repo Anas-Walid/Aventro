@@ -1,11 +1,31 @@
+/* Dark theme (current) */
 :root {
   --orange: #f47b20;
   --orange-dark: #d45b0a;
   --bg: #0f172a;
   --bg-panel: #1f2937;
-  --text: #f9fafb;
+  --text: #f47b20;
   --text-muted: #9ca3af;
   --border: rgba(255,255,255,0.08);
+  --h1-h6: #f47b20;
+}
+
+/* Light theme */
+body.light-theme {
+  --bg: linear-gradient(284deg, #f12711 0%, #f5af19 100%);
+  --bg-panel: #ffffff;
+  --text: #f47b20;
+  --text-muted: #4b5563;
+  --border: rgba(0,0,0,0.1);
+  --h1-h6: #000;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--h1-h6) ;
+}
+
+h1, h2, h3, h4, h5, h6.light-theme {
+  color: var(--h1-h6) ;
 }
 
 body {

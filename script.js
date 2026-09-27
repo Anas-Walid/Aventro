@@ -70,3 +70,26 @@ function changeColor(){
     let color = "rgb("+ red + "," + green + "," + blue + ")";
     document.getElementById(".bg").style.backgroundColor = color;
 }
+
+
+const themeBtn = document.getElementById("theme-toggle");
+
+// Load saved theme
+if (localStorage.getItem("theme") === "light") {
+    document.body.classList.add("light-theme");
+    themeBtn.textContent = "☀️";
+}
+
+themeBtn.addEventListener("click", () => {
+    document.body.classList.toggle("light-theme");
+
+    const lightMode =
+        document.body.classList.contains("light-theme");
+
+    localStorage.setItem(
+        "theme",
+        lightMode ? "light" : "dark"
+    );
+
+    themeBtn.textContent = lightMode ? "☀️" : "🌙";
+});
