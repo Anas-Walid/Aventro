@@ -3,121 +3,133 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Avento - Learn Web Development </title>
-<meta name="description" content="Learn web development with free tutorials on HTML, CSS, JavaScript, Python, and more. Start coding today with interactive examples.">
+
+<title>Avento - Learn Web Development</title>
+
+<meta name="description" content="Learn web development with free tutorials on HTML, CSS, JavaScript, Python, and more.">
 <meta name="keywords" content="HTML, CSS, JavaScript, tutorial">
 <meta name="author" content="Anas Walid">
+
 <link rel="canonical" href="https://20avento14.netlify.app/">
 
-<!-- Open Graph -->
-<meta property="og:title" content="Avento - Learn Web Development ">
-<meta property="og:description" content="Learn web development with free tutorials on HTML, CSS, JavaScript, Python, and more. Start coding today with interactive examples.">
+<meta property="og:title" content="Avento - Learn Web Development">
+<meta property="og:description" content="Learn web development with free tutorials.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://20avento14.netlify.app/">
 <meta property="og:image" content="https://www.w3schools.com/images/w3schools_logo_436_2.png">
-<meta property="og:site_name" content="Avento">
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="Screenshot__156_-removebg-preview.png">
+
+<link rel="stylesheet" href="style.css">
+Screenshot__156_-removebg-preview.png
 </head>
+
 <body>
-  <div class="topnav">
-    <div class="brand"> <img src="Aventro-removebg-preview.png" alt="" height="30px" width="30px" style="margin-right: 5px;" onclick="location.reload()" style="cursor: pointer;"> Avento</div>
-    <div>
+
+<div id="bg">
+
+<nav class="topnav">
+<div class="brand">
+<img
+src="Aventro-removebg-preview.png"
+alt="Avento"
+width="30"
+height="30"
+onclick="location.reload()"
+style="cursor:pointer;margin-right:5px;">
+Avento
+</div>
+
+<div>
 <button id="theme-toggle">🌙</button>
 </div>
-    <div>
-            <a href="index.html">Home</a>
-      <a href="lesson-html.html">HTML</a>
-      <a href="lesson-css.html">CSS</a>
-      <a href="lesson-js.html">JavaScript</a>
-      <a href="resources.html">Resources</a>
-      <a href="sandbox.html">Practice</a>
-      <a href="flashcards.html">Flashcards</a>
-      <a href="quizzes.html">Quiz</a>
-    </div>
-  </div>
-<div class="tab">
-  <button class="tablinks" onclick="location.href='lesson-html.html'">HTML</button>
-  <button class="tablinks" onclick="location.href='lesson-css.html'">CSS</button>
-  <button class="tablinks" onclick="location.href='lesson-js.html'">JavaScript</button>
+
+<div>
+<a href="index.html">Home</a>
+<a href="lesson-html.html">HTML</a>
+<a href="lesson-css.html">CSS</a>
+<a href="lesson-js.html">JavaScript</a>
+<a href="resources.html">Resources</a>
+<a href="sandbox.html">Practice</a>
+<a href="flashcards.html">Flashcards</a>
+<a href="quizzes.html">Quiz</a>
 </div>
+</nav>
 
+<div class="layout">
 
-  <div class="layout">
-    <aside class="sidebar">
-      <h3>Learn</h3>
-<div class="ta">
-<h3>Coming soon</h3>
+<aside class="sidebar">
+<h3>Learn</h3>
+
+<div class="course-intro">
+<h3>Coming Soon</h3>
 </div>
-    </aside>
+</aside>
 
-    <main class="content">
-      <h1>JavaScript Basics</h1>
-<p>HTML is the structure of every website.</p>
+<main class="content">
+
+<h1>JavaScript Basics</h1>
+
+<p>
+JavaScript adds interactivity and functionality to websites.
+</p>
+
 <div class="code-box">
 <pre>
 &lt;script&gt;
-
 alert("Hello");
-
 &lt;/script&gt;
 </pre>
 </div>
 
-<section class="course-intro" style="margin-top: 20px;">
-    <h1>Learn JavaScript</h1>
+<section class="course-intro">
 
-    <p>
-        JavaScript is the programming language of the web. It allows websites
-        to respond to user actions, update content dynamically, and create
-        interactive experiences.
-    </p>
+<h1>Learn JavaScript</h1>
 
-    <p>
-        In this course, you'll learn how to make websites come alive with
-        buttons, forms, animations, games, and real-world applications.
-    </p>
+<p>
+JavaScript is the programming language of the web.
+</p>
 
-    <div class="goal-box" style="margin-top: 20px;">
-        <h3>What You'll Learn</h3>
-        <ul>
-            <li>Variables</li>
-            <li>Functions</li>
-            <li>Conditions</li>
-            <li>Loops</li>
-            <li>DOM Manipulation</li>
-            <li>Events</li>
-            <li>APIs</li>
-        </ul>
-    </div>
+<div class="goal-box">
+
+<h3>What You'll Learn</h3>
+
+<ul>
+<li>Variables</li>
+<li>Functions</li>
+<li>Conditions</li>
+<li>Loops</li>
+<li>DOM Manipulation</li>
+<li>Events</li>
+<li>APIs</li>
+</ul>
+
+</div>
+
 </section>
-<section class="course-intro" style="margin-top: 20px;">
-    <h1>Advanced JavaScript</h1>
-<p id="count" style="font-size:40px;">0</p>
 
-<button class="counter-buttons" onclick="increaseCount()">+</button>
-<button class="counter-buttons" onclick="decreaseCount()">-</button>
-<button class="counter-buttons" onclick="resetCount()">Reset</button>
-<button class="counter-buttons" onclick="saveCount()">Save</button>
-<button class="counter-buttons" onclick="loadCount()">Load</button>
-    </div>
+<section class="course-intro">
+
+<h1>Counter Project</h1>
+
+<p id="counter-value">0</p>
+
+<div class="buttons">
+<button class="counter-buttons" onclick="addTwo()">+</button>
+<button class="counter-buttons" onclick="subtractOne()">-</button>
+<button class="counter-buttons" onclick="resetCounter()">Reset</button>
+<button class="counter-buttons" onclick="changeColor()">
+Flip Color
+</button>
+</div>
+
 </section>
-    </main>
-  </div>
-  <script src="script.js">
-function openCity(evt, cityName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-  document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
-</script>
+
+</main>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
 </body>
 </html>
