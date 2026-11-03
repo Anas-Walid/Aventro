@@ -240,3 +240,18 @@ body {
     gap: 10px;
   }
 }
+
+
+/* Special AI Button Style */
+.nav-links a.ai-nav-btn {
+  color: #f47b20;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav-links a.ai-nav-btn:hover, .nav-links a.ai-nav-btn.active {
+  color: #d35b00;
+  text-shadow: 0 0 10px rgba(168, 85, 247, 0.4);
+}
