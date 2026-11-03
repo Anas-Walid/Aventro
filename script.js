@@ -1,27 +1,21 @@
-// Theme Toggle
-
-const themeBtn = document.getElementById("theme-toggle");
-
-if(localStorage.getItem("theme") === "light"){
-  document.body.classList.add("light-theme");
-  themeBtn.textContent = "☀️";
+// Theme Toggle Switcher
+const themeBtn = document.getElementById('theme-toggle');
+if (themeBtn) {
+  themeBtn.addEventListener('click', () => {
+    document.body.classList.toggle('light-theme');
+    themeBtn.textContent = document.body.classList.contains('light-theme') ? '☀️' : '🌙';
+  });
 }
 
-themeBtn.addEventListener("click", () => {
-
-  document.body.classList.toggle("light-theme");
-
-  const lightMode =
-    document.body.classList.contains("light-theme");
-
-  localStorage.setItem(
-    "theme",
-    lightMode ? "light" : "dark"
-  );
-
-  themeBtn.textContent =
-    lightMode ? "☀️" : "🌙";
-});
+// Accent Color Randomizer demo
+const colorBtn = document.getElementById('color-btn');
+if (colorBtn) {
+  colorBtn.addEventListener('click', () => {
+    const accents = ['#f47b20', '#6366f1', '#10b981', '#ec4899', '#8b5cf6'];
+    const selected = accents[Math.floor(Math.random() * accents.length)];
+    document.documentElement.style.setProperty('--accent-orange', selected);
+  });
+}
 
 
 // Counter
@@ -74,48 +68,3 @@ function changeColor(){
 }
 
 
-const chatBox = document.getElementById("chatBox");
-const userInput = document.getElementById("userInput");
-const sendBtn = document.getElementById("sendBtn");
-
-const botResponses = {
-  "hi": "Hi! How can I help you?",  
-  "hello": "Hi! How can I help you?",
-  "Hi": "Hi! How can I help you?",  
-  "Hello": "Hi! How can I help you?",
-  "bye": "Goodbye!",
-  "good bye": "Goodbye!",
-  "Bye": "Goodbye!",
-  "Good bye": "Goodbye!",
-  "Good Bye": "Goodbye!",
-  "default": "I didn’t understand that."
-};
-
-function addMessage(text, sender) {
-  const msg = document.createElement("div");
-  msg.classList.add("message", sender);
-  msg.textContent = text;
-  chatBox.appendChild(msg);
-  chatBox.scrollTop = chatBox.scrollHeight;
-}
-
-function handleUserInput() {
-  const text = userInput.value.trim();
-  if (!text) return;
-  addMessage(text, "user");
-  userInput.value = "";
-  const reply = botResponses[text] || botResponses.default;
-  setTimeout(() => addMessage(reply, "bot"), 400);
-}
-
-sendBtn.onclick = handleUserInput;
-userInput.addEventListener("keypress", e => {
-  if (e.key === "Enter") handleUserInput();
-});
-
-const openBtn = document.getElementById("openChatBtn");
-const chatPanel = document.getElementById("chatPanel");
-
-openBtn.addEventListener("click", () => {
-  chatPanel.classList.toggle("open");
-});
