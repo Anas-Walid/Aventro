@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avento - Sign In / Register</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-page-body" style="display:flex; justify-content:center; align-items:center; height:100vh;">
+  <div class="auth-card" style="background:var(--bg-card); padding:30px; border-radius:16px; border:1px solid var(--border-color); width:100%; max-width:400px; box-shadow:0 10px 30px rgba(0,0,0,0.3);">
+    <div class="auth-header" style="text-align:center; margin-bottom:20px;">
+      <h2>Welcome to Avento</h2>
+      <p style="color:var(--text-muted); font-size:0.85rem;">Sign in to save chats & sync progress[cite: 8]</p>
+    </div>
+    <form id="authForm" onsubmit="event.preventDefault(); location.href='avento_home.html';">
+      <div class="form-group" style="margin-bottom:15px;">
+        <label style="display:block; margin-bottom:5px; font-size:0.85rem; color:var(--text-muted);">Email or Username[cite: 8]</label>
+        <input type="text" required style="width:100%; padding:10px; border-radius:8px; border:1px solid var(--border-color); background:var(--bg-input); color:var(--text-primary); outline:none;">
+      </div>
+      <div class="form-group" style="margin-bottom:20px;">
+        <label style="display:block; margin-bottom:5px; font-size:0.85rem; color:var(--text-muted);">Password[cite: 8]</label>
+        <input type="password" required style="width:100%; padding:10px; border-radius:8px; border:1px solid var(--border-color); background:var(--bg-input); color:var(--text-primary); outline:none;">
+      </div>
+      <button type="submit" class="auth-submit-btn" style="width:100%; padding:12px; background:var(--accent); color:white; border:none; border-radius:8px; font-weight:bold; cursor:pointer;">Log In / Register</button>
+    </form>
+    <div style="text-align:center; margin-top:15px;">
+      <a href="avento_home.html" style="color:var(--text-muted); font-size:0.85rem; text-decoration:none;">Continue as Guest</a>
+    </div>
+  </div>
+</body>
+</html>

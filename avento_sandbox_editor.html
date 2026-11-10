@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avento - Code Sandbox</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="topnav">
+    <div class="brand">
+      <img src="Aventro-removebg-preview.png" alt="Logo" height="30" width="30" onclick="location.href='avento_home.html'" style="cursor:pointer;">
+      Avento Sandbox
+    </div>
+    <div class="nav-links">
+      <a href="avento_home.html">Home</a>
+      <a href="avento_html_lessons.html">HTML</a>
+      <a href="avento_css_lessons.html">CSS</a>
+      <a href="avento_js_lessons.html">JavaScript</a>
+      <a href="avento_ai_assistant.html" class="ai-nav-btn">✨ AI</a>
+      <a href="avento_sandbox_editor.html" class="active">Practice</a>
+      <a href="avento_quizzes.html">Quiz</a>
+    </div>
+  </nav>
+
+  <div class="layout" style="padding: 20px; max-width: 1400px; margin: 0 auto; display:block;">
+    <main class="content" style="width: 100%;">
+      <h1>Interactive Code Sandbox</h1>
+      <p>Test your HTML, CSS, and JavaScript live[cite: 21].</p>
+      
+      <div class="sandbox" style="margin-top: 15px; border:1px solid var(--border-color); border-radius:12px; background:var(--bg-card); overflow:hidden;">
+        <div class="tabs" style="display:flex; gap:10px; padding:10px; background:var(--bg-sidebar);">
+          <button class="tab active" onclick="switchEditor('html')" id="btn-html">HTML</button>
+          <button class="tab" onclick="switchEditor('css')" id="btn-css">CSS</button>
+          <button class="tab" onclick="switchEditor('js')" id="btn-js">JavaScript</button>
+        </div>
+        <div class="workspace" style="display:grid; grid-template-columns: 1fr 1fr; min-height:450px;">
+          <div class="editor" style="background:#0a1422; padding:10px;">
+            <textarea id="codeHtml" style="width:100%; height:400px; background:#0a1422; color:#fff; border:none; outline:none; font-family:monospace; resize:none;">&lt;div class="card"&gt;
+  <h2>Hello Avento</h2>
+  &lt;p&gt;Edit code and click Run!&lt;/p&gt;
+&lt;/div&gt;</textarea>
+            <textarea id="codeCss" style="width:100%; height:400px; background:#0a1422; color:#fff; border:none; outline:none; font-family:monospace; resize:none; display:none;">body { font-family: sans-serif; display:grid; place-items:center; height:100vh; background:#111; color:#fff; }
+.card { padding:20px; background:#222; border-radius:10px; border:1px solid #444; }</textarea>
+            <textarea id="codeJs" style="width:100%; height:400px; background:#0a1422; color:#fff; border:none; outline:none; font-family:monospace; resize:none; display:none;">console.log("Sandbox active");</textarea>
+            <div style="display:flex; justify-content:flex-end; gap:10px; margin-top:10px;">
+              <button onclick="runCode()" class="primary-btn" style="padding:8px 16px;">Run Code</button>
+            </div>
+          </div>
+          <div class="preview" style="background:#fff;">
+            <iframe id="previewFrame" style="width:100%; height:100%; border:none;" title="Preview"></iframe>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    function switchEditor(type) {
+      document.getElementById('codeHtml').style.display = (type === 'html') ? 'block' : 'none';
+      document.getElementById('codeCss').style.display = (type === 'css') ? 'block' : 'none';
+      document.getElementById('codeJs').style.display = (type === 'js') ? 'block' : 'none';
+      document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+      document.getElementById('btn-' + type).classList.add('active');
+    }
+    function runCode() {
+      const h = document.getElementById('codeHtml').value;
+      const c = document.getElementById('codeCss').value;
+      const j = document.getElementById('codeJs').value;
+      const doc = `<style>${c}</style>${h}<script>${j}<\/script>`;
+      document.getElementById('previewFrame').srcdoc = doc;
+    }
+    runCode();
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

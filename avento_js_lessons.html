@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avento - JavaScript Chapter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="topnav">
+    <div class="brand">
+      <img src="Aventro-removebg-preview.png" alt="Logo" height="30" width="30" onclick="location.href='avento_home.html'" style="cursor:pointer;">
+      Avento JS
+    </div>
+    <div class="nav-links">
+      <a href="avento_home.html">Home</a>
+      <a href="avento_html_lessons.html">HTML</a>
+      <a href="avento_css_lessons.html">CSS</a>
+      <a href="avento_js_lessons.html" class="active">JavaScript</a>
+      <a href="avento_ai_assistant.html" class="ai-nav-btn">✨ AI</a>
+      <a href="avento_sandbox_editor.html">Practice</a>
+      <a href="avento_quizzes.html">Quiz</a>
+    </div>
+  </nav>
+
+  <div class="tab">
+    <button class="tablinks active" onclick="switchTab(1)">1. Intro</button>
+    <button class="tablinks" onclick="switchTab(2)">2. Variables</button>
+    <button class="tablinks" onclick="switchTab(3)">3. Functions</button>
+    <button class="tablinks" onclick="switchTab(4)">4. Conditions</button>
+    <button class="tablinks" onclick="switchTab(5)">5. Loops</button>
+    <button class="tablinks" onclick="switchTab(6)">6. Arrays</button>
+    <button class="tablinks" onclick="switchTab(7)">7. Objects</button>
+    <button class="tablinks" onclick="switchTab(8)">8. DOM</button>
+    <button class="tablinks" onclick="switchTab(9)">9. Events</button>
+    <button class="tablinks" onclick="switchTab(10)">10. Fetch API</button>
+  </div>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <h3>JS Modules</h3>
+      <div class="ta">
+        <a href="avento_home.html">← Back to Home</a>
+        <a href="avento_sandbox_editor.html">Test in Sandbox</a>
+      </div>
+    </aside>
+
+    <main class="content">
+      <div class="lesson-tab-content" id="tab-1">
+        <h1>Tab 1: Intro to JavaScript</h1>
+        <p>JavaScript brings interactivity to websites[cite: 19]. Add your lesson notes here.</p>
+        <div class="code-box">console.log("Hello Avento");</div>
+      </div>
+      <div class="lesson-tab-content" id="tab-2" style="display:none;"><h1>Tab 2: Variables & Data Types</h1><p>Learn let, const, strings, numbers, and booleans.</p></div>
+      <div class="lesson-tab-content" id="tab-3" style="display:none;"><h1>Tab 3: Functions</h1><p>Write reusable blocks of code and arrow functions.</p></div>
+      <div class="lesson-tab-content" id="tab-4" style="display:none;"><h1>Tab 4: Conditionals</h1><p>Control flow using if, else, and switch statements.</p></div>
+      <div class="lesson-tab-content" id="tab-5" style="display:none;"><h1>Tab 5: Loops</h1><p>Automate repetitive tasks with for and while loops.</p></div>
+      <div class="lesson-tab-content" id="tab-6" style="display:none;"><h1>Tab 6: Arrays</h1><p>Store and manipulate lists of data efficiently.</p></div>
+      <div class="lesson-tab-content" id="tab-7" style="display:none;"><h1>Tab 7: Objects</h1><p>Model real-world entities with key-value pairs.</p></div>
+      <div class="lesson-tab-content" id="tab-8" style="display:none;"><h1>Tab 8: DOM Manipulation</h1><p>Select and update HTML elements dynamically[cite: 19].</p></div>
+      <div class="lesson-tab-content" id="tab-9" style="display:none;"><h1>Tab 9: Event Listeners</h1><p>Respond to user clicks, keyboard input, and mouse movement.</p></div>
+      <div class="lesson-tab-content" id="tab-10" style="display:none;"><h1>Tab 10: Fetch API & Async</h1><p>Retrieve live data from external servers asynchronously.</p></div>
+    </main>
+  </div>
+
+  <script>
+    function switchTab(num) {
+      for (let i = 1; i <= 10; i++) {
+        document.getElementById('tab-' + i).style.display = (i === num) ? 'block' : 'none';
+      }
+      document.querySelectorAll('.tablinks').forEach((btn, idx) => {
+        btn.classList.toggle('active', idx === num - 1);
+      });
+    }
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

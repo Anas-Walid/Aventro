@@ -1,0 +1,26 @@
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+:root {
+  --bg-main: #1e1f22; --bg-sidebar: #141517; --bg-card: #20242c; --bg-hover: #2a2b2e;
+  --bg-input: #2b2d31; --border-color: #323438; --text-primary: #f2f3f5; --text-muted: #949ba4;
+  --accent: #ffae00; --accent-hover: #cc8b00;
+}
+body { background-color: var(--bg-main); color: var(--text-primary); min-height: 100vh; }
+.topnav { height: 60px; background: var(--bg-sidebar); border-bottom: 1px solid var(--border-color); display: flex; align-items: center; justify-content: space-between; padding: 0 20px; }
+.brand { font-weight: bold; font-size: 1.1rem; display: flex; align-items: center; gap: 8px; color: var(--text-primary); cursor: pointer; }
+.nav-links { display: flex; align-items: center; gap: 15px; }
+.nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; padding: 6px 10px; border-radius: 6px; transition: 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--text-primary); background: var(--bg-hover); }
+.tab { display: flex; background: var(--bg-sidebar); border-bottom: 1px solid var(--border-color); padding: 0 20px; gap: 10px; }
+.tablinks { background: transparent; border: none; color: var(--text-muted); padding: 10px 15px; cursor: pointer; font-weight: 600; border-bottom: 2px solid transparent; }
+.tablinks:hover, .tablinks.active { color: var(--accent); border-bottom-color: var(--accent); }
+.layout { display: flex; min-height: calc(100vh - 110px); }
+.sidebar { width: 260px; background: var(--bg-sidebar); border-right: 1px solid var(--border-color); padding: 20px; display: flex; flex-direction: column; gap: 10px; }
+.sidebar h3 { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 5px; text-transform: uppercase; }
+.ta { display: flex; flex-direction: column; gap: 4px; }
+.ta a { color: var(--text-muted); text-decoration: none; padding: 8px 12px; border-radius: 6px; font-size: 0.9rem; transition: 0.2s; }
+.ta a:hover, .ta a.active { background: var(--bg-hover); color: var(--text-primary); }
+.content { flex: 1; padding: 30px; overflow-y: auto; max-width: 900px; }
+.code-box { background: #0a1422; color: #38bdf8; padding: 15px; border-radius: 8px; font-family: monospace; margin: 15px 0; border: 1px solid var(--border-color); }
+.goal-box { background: var(--bg-card); border: 1px solid var(--border-color); padding: 20px; border-radius: 12px; margin-top: 20px; }
+.goal-box ul { margin-left: 20px; margin-top: 10px; color: var(--text-muted); }
+#theme-toggle { background: none; border: none; cursor: pointer; font-size: 1.1rem; }

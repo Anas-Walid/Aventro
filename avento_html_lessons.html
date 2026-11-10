@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avento - HTML Chapter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="topnav">
+    <div class="brand">
+      <img src="Aventro-removebg-preview.png" alt="Logo" height="30" width="30" onclick="location.href='avento_home.html'" style="cursor:pointer;">
+      Avento HTML
+    </div>
+    <div class="nav-links">
+      <a href="avento_home.html">Home</a>
+      <a href="avento_html_lessons.html" class="active">HTML</a>
+      <a href="avento_css_lessons.html">CSS</a>
+      <a href="avento_js_lessons.html">JavaScript</a>
+      <a href="avento_ai_assistant.html" class="ai-nav-btn">✨ AI</a>
+      <a href="avento_sandbox_editor.html">Practice</a>
+      <a href="avento_quizzes.html">Quiz</a>
+    </div>
+  </nav>
+
+  <div class="tab">
+    <button class="tablinks active" onclick="switchTab(1)">1. Intro</button>
+    <button class="tablinks" onclick="switchTab(2)">2. Elements</button>
+    <button class="tablinks" onclick="switchTab(3)">3. Attributes</button>
+    <button class="tablinks" onclick="switchTab(4)">4. Headings</button>
+    <button class="tablinks" onclick="switchTab(5)">5. Paragraphs</button>
+    <button class="tablinks" onclick="switchTab(6)">6. Links</button>
+    <button class="tablinks" onclick="switchTab(7)">7. Images</button>
+    <button class="tablinks" onclick="switchTab(8)">8. Tables</button>
+    <button class="tablinks" onclick="switchTab(9)">9. Forms</button>
+    <button class="tablinks" onclick="switchTab(10)">10. Semantics</button>
+  </div>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <h3>HTML Modules</h3>
+      <div class="ta">
+        <a href="avento_home.html">← Back to Home</a>
+        <a href="avento_sandbox_editor.html">Test in Sandbox</a>
+      </div>
+    </aside>
+
+    <main class="content">
+      <div class="lesson-tab-content" id="tab-1">
+        <h1>Tab 1: Introduction to HTML</h1>
+        <p>HTML is the standard markup language for creating Web pages. Add your lesson content here.</p>
+        <div class="code-box">&lt;p&gt;Hello HTML&lt;/p&gt;</div>
+      </div>
+      <div class="lesson-tab-content" id="tab-2" style="display:none;">
+        <h1>Tab 2: HTML Elements</h1>
+        <p>An HTML element is defined by a start tag, some content, and an end tag.</p>
+      </div>
+      <div class="lesson-tab-content" id="tab-3" style="display:none;">
+        <h1>Tab 3: HTML Attributes</h1>
+        <p>Attributes provide additional information about HTML elements.</p>
+      </div>
+      <div class="lesson-tab-content" id="tab-4" style="display:none;">
+        <h1>Tab 4: HTML Headings</h1>
+        <p>HTML headings are defined with the <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code> tags.</p>
+      </div>
+      <div class="lesson-tab-content" id="tab-5" style="display:none;">
+        <h1>Tab 5: HTML Paragraphs</h1>
+        <p>Paragraphs are defined with the <code>&lt;p&gt;</code> tag.</p>
+      </div>
+      <div class="lesson-tab-content" id="tab-6" style="display:none;">
+        <h1>Tab 6: HTML Links</h1>
+        <p>Links are defined with the <code>&lt;a&gt;</code> tag and the <code>href</code> attribute.</p>
+      </div>
+      <div class="lesson-tab-content" id="tab-7" style="display:none;">
+        <h1>Tab 7: HTML Images</h1>
+        <p>Images are embedded using the <code>&lt;img&gt;</code> tag.</p>
+      </div>
+      <div class="lesson-tab-content" id="tab-8" style="display:none;">
+        <h1>Tab 8: HTML Tables</h1>
+        <p>Organize data in rows and columns using <code>&lt;table&gt;</code>, <code>&lt;tr&gt;</code>, and <code>&lt;td&gt;</code>.</p>
+      </div>
+      <div class="lesson-tab-content" id="tab-9" style="display:none;">
+        <h1>Tab 9: HTML Forms</h1>
+        <p>Collect user input using input fields, checkboxes, and submit buttons.</p>
+      </div>
+      <div class="lesson-tab-content" id="tab-10" style="display:none;">
+        <h1>Tab 10: Semantic HTML</h1>
+        <p>Use meaningful tags like <code>&lt;header&gt;</code>, <code>&lt;article&gt;</code>, and <code>&lt;footer&gt;</code>.</p>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    function switchTab(num) {
+      for (let i = 1; i <= 10; i++) {
+        document.getElementById('tab-' + i).style.display = (i === num) ? 'block' : 'none';
+      }
+      const buttons = document.querySelectorAll('.tablinks');
+      buttons.forEach((btn, idx) => {
+        btn.classList.toggle('active', idx === num - 1);
+      });
+    }
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

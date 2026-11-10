@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avento - CSS Chapter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="topnav">
+    <div class="brand">
+      <img src="Aventro-removebg-preview.png" alt="Logo" height="30" width="30" onclick="location.href='avento_home.html'" style="cursor:pointer;">
+      Avento CSS
+    </div>
+    <div class="nav-links">
+      <a href="avento_home.html">Home</a>
+      <a href="avento_html_lessons.html">HTML</a>
+      <a href="avento_css_lessons.html" class="active">CSS</a>
+      <a href="avento_js_lessons.html">JavaScript</a>
+      <a href="avento_ai_assistant.html" class="ai-nav-btn">✨ AI</a>
+      <a href="avento_sandbox_editor.html">Practice</a>
+      <a href="avento_quizzes.html">Quiz</a>
+    </div>
+  </nav>
+
+  <div class="tab">
+    <button class="tablinks active" onclick="switchTab(1)">1. Syntax</button>
+    <button class="tablinks" onclick="switchTab(2)">2. Selectors</button>
+    <button class="tablinks" onclick="switchTab(3)">3. Colors</button>
+    <button class="tablinks" onclick="switchTab(4)">4. Box Model</button>
+    <button class="tablinks" onclick="switchTab(5)">5. Margins/Padding</button>
+    <button class="tablinks" onclick="switchTab(6)">6. Flexbox</button>
+    <button class="tablinks" onclick="switchTab(7)">7. Grid</button>
+    <button class="tablinks" onclick="switchTab(8)">8. Animations</button>
+    <button class="tablinks" onclick="switchTab(9)">9. Media Queries</button>
+    <button class="tablinks" onclick="switchTab(10)">10. Variables</button>
+  </div>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <h3>CSS Modules</h3>
+      <div class="ta">
+        <a href="avento_home.html">← Back to Home</a>
+        <a href="avento_sandbox_editor.html">Test in Sandbox</a>
+      </div>
+    </aside>
+
+    <main class="content">
+      <div class="lesson-tab-content" id="tab-1">
+        <h1>Tab 1: CSS Syntax</h1>
+        <p>A CSS rule consists of a selector and a declaration block[cite: 17]. Add lessons here.</p>
+        <div class="code-box">h1 { color: blue; font-size: 24px; }</div>
+      </div>
+      <div class="lesson-tab-content" id="tab-2" style="display:none;"><h1>Tab 2: Selectors</h1><p>Learn element, class, and ID selectors.</p></div>
+      <div class="lesson-tab-content" id="tab-3" style="display:none;"><h1>Tab 3: Colors & Backgrounds</h1><p>Explore HEX, RGB, and HSL color values.</p></div>
+      <div class="lesson-tab-content" id="tab-4" style="display:none;"><h1>Tab 4: The Box Model</h1><p>Understand content, padding, border, and margin.</p></div>
+      <div class="lesson-tab-content" id="tab-5" style="display:none;"><h1>Tab 5: Spacing</h1><p>Master precise layout alignment.</p></div>
+      <div class="lesson-tab-content" id="tab-6" style="display:none;"><h1>Tab 6: Flexbox Layout</h1><p>Build flexible one-dimensional layouts with ease.</p></div>
+      <div class="lesson-tab-content" id="tab-7" style="display:none;"><h1>Tab 7: CSS Grid</h1><p>Design complex two-dimensional web grids.</p></div>
+      <div class="lesson-tab-content" id="tab-8" style="display:none;"><h1>Tab 8: Transitions & Animations</h1><p>Add smooth keyframe animations and interactive hover effects.</p></div>
+      <div class="lesson-tab-content" id="tab-9" style="display:none;"><h1>Tab 9: Responsive Design</h1><p>Adapt layouts for mobile phones and tablets.</p></div>
+      <div class="lesson-tab-content" id="tab-10" style="display:none;"><h1>Tab 10: CSS Variables</h1><p>Manage themes using custom properties (:root).</p></div>
+    </main>
+  </div>
+
+  <script>
+    function switchTab(num) {
+      for (let i = 1; i <= 10; i++) {
+        document.getElementById('tab-' + i).style.display = (i === num) ? 'block' : 'none';
+      }
+      document.querySelectorAll('.tablinks').forEach((btn, idx) => {
+        btn.classList.toggle('active', idx === num - 1);
+      });
+    }
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

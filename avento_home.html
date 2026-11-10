@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avento - Learn Web Development</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="Aventro-removebg-preview.png">
+</head>
+<body>
+
+  <nav class="topnav">
+    <div class="brand">
+      <img src="Aventro-removebg-preview.png" alt="Avento Logo" height="30" width="30" onclick="location.href='avento_home.html'" style="cursor:pointer;">
+      Avento
+    </div>
+    <div class="nav-links">
+      <a href="avento_home.html" class="active">Home</a>
+      <a href="avento_html_lessons.html">HTML</a>
+      <a href="avento_css_lessons.html">CSS</a>
+      <a href="avento_js_lessons.html">JavaScript</a>
+      <a href="avento_ai_assistant.html" class="ai-nav-btn">✨ Aveno AI</a>
+      <a href="avento_sandbox_editor.html">Practice</a>
+      <a href="avento_quizzes.html">Quiz</a>
+      <a href="avento_auth_portal.html" class="auth-nav-btn">🔑 Account</a>
+      <button id="theme-toggle">🌙</button>
+    </div>
+  </nav>
+
+  <div class="tab">
+    <button class="tablinks" onclick="location.href='avento_html_lessons.html'">HTML Chapter</button>
+    <button class="tablinks" onclick="location.href='avento_css_lessons.html'">CSS Chapter</button>
+    <button class="tablinks" onclick="location.href='avento_js_lessons.html'">JS Chapter</button>
+  </div>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <h3>Platform Menu</h3>
+      <div class="ta">
+        <a href="avento_home.html" class="active">Home Dashboard</a>
+        <a href="avento_html_lessons.html">HTML Course</a>
+        <a href="avento_css_lessons.html">CSS Course</a>
+        <a href="avento_js_lessons.html">JavaScript Course</a>
+        <a href="avento_flashcards.html">Study Flashcards</a>
+        <a href="avento_sandbox_editor.html">Practice Sandbox</a>
+        <a href="avento_quizzes.html">Interactive Quizzes</a>
+        <a href="avento_ai_assistant.html">AI Assistant</a>
+      </div>
+    </aside>
+
+    <main class="content">
+      <section class="course-intro">
+        <h1>Welcome to Avento Hub</h1>
+        <p>Master modern web development step-by-step through interconnected chapters, interactive sandboxes, and AI assistance[cite: 15].</p>
+        <div class="goal-box">
+          <h3>Platform Highlights</h3>
+          <ul>
+            <li>10 Modular Tabs per Chapter for Extensive Lessons</li>
+            <li>Live Multi-Tab Code Sandbox Playground</li>
+            <li>Interactive Quizzes and 3D Flashcards</li>
+            <li>Persistent Local Storage & Theme Switching</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
