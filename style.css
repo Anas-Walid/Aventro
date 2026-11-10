@@ -1,32 +1,8 @@
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-:root {
-  --bg-main: #1e1f22; --bg-sidebar: #141517; --bg-card: #20242c; --bg-hover: #2a2b2e;
-  --bg-input: #2b2d31; --border-color: #323438; --text-primary: #f2f3f5; --text-muted: #949ba4;
-  --accent: #ffae00; --accent-hover: #cc8b00;
-}
-body { background-color: var(--bg-main); color: var(--text-primary); min-height: 100vh; }
-.topnav { height: 60px; background: var(--bg-sidebar); border-bottom: 1px solid var(--border-color); display: flex; align-items: center; justify-content: space-between; padding: 0 20px; }
-.brand { font-weight: bold; font-size: 1.1rem; display: flex; align-items: center; gap: 8px; color: var(--text-primary); cursor: pointer; }
-.nav-links { display: flex; align-items: center; gap: 15px; }
-.nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; padding: 6px 10px; border-radius: 6px; transition: 0.2s; }
-.nav-links a:hover, .nav-links a.active { color: var(--text-primary); background: var(--bg-hover); }
-.tab { display: flex; background: var(--bg-sidebar); border-bottom: 1px solid var(--border-color); padding: 0 20px; gap: 10px; }
-.tablinks { background: transparent; border: none; color: var(--text-muted); padding: 10px 15px; cursor: pointer; font-weight: 600; border-bottom: 2px solid transparent; }
-.tablinks:hover, .tablinks.active { color: var(--accent); border-bottom-color: var(--accent); }
-.layout { display: flex; min-height: calc(100vh - 110px); }
-.sidebar { width: 260px; background: var(--bg-sidebar); border-right: 1px solid var(--border-color); padding: 20px; display: flex; flex-direction: column; gap: 10px; }
-.sidebar h3 { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 5px; text-transform: uppercase; }
-.ta { display: flex; flex-direction: column; gap: 4px; }
-.ta a { color: var(--text-muted); text-decoration: none; padding: 8px 12px; border-radius: 6px; font-size: 0.9rem; transition: 0.2s; }
-.ta a:hover, .ta a.active { background: var(--bg-hover); color: var(--text-primary); }
-.content { flex: 1; padding: 30px; overflow-y: auto; max-width: 900px; }
-.code-box { background: #0a1422; color: #38bdf8; padding: 15px; border-radius: 8px; font-family: monospace; margin: 15px 0; border: 1px solid var(--border-color); }
-.goal-box { background: var(--bg-card); border: 1px solid var(--border-color); padding: 20px; border-radius: 12px; margin-top: 20px; }
-.goal-box ul { margin-left: 20px; margin-top: 10px; color: var(--text-muted); }
-#theme-toggle { background: none; border: none; cursor: pointer; font-size: 1.1rem; }
+/* ==========================================
+   Avento Shared Design System & Stylesheet
+   ========================================== */
 
-
-/* Reset and global setup */
+/* Global Reset & Base Setup */
 * {
     margin: 0;
     padding: 0;
@@ -69,19 +45,93 @@ body:not(.dark-theme) .message.user .message-content {
 body {
     background-color: var(--bg-main);
     color: var(--text-primary);
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
+/* App & Layout Shells */
 .app-container {
     display: flex;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     position: relative;
+    overflow: hidden;
 }
 
-/* Sidebar Styles */
+.layout {
+    display: flex;
+    min-height: calc(100vh - 110px);
+    width: 100%;
+}
+
+/* Top Navigation Bar */
+.topnav {
+    height: 60px;
+    background: var(--bg-sidebar);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 50;
+}
+
+.brand {
+    font-weight: bold;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-primary);
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--text-primary);
+    background: var(--bg-hover);
+}
+
+/* Secondary Navigation Tabs */
+.tab {
+    display: flex;
+    background: var(--bg-sidebar);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0 20px;
+    gap: 10px;
+}
+
+.tablinks {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    padding: 10px 15px;
+    cursor: pointer;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: 0.2s;
+}
+
+.tablinks:hover, .tablinks.active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+/* Sidebar Styling */
 .sidebar {
     width: var(--sidebar-width);
     background-color: var(--bg-sidebar);
@@ -93,6 +143,7 @@ body {
     transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 20;
     position: relative;
+    height: 100%;
 }
 
 .sidebar.collapsed {
@@ -165,6 +216,39 @@ body {
     display: none;
 }
 
+/* Sidebar Navigation Menu Links (.ta) */
+.sidebar h3 {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.ta {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.ta a {
+    color: var(--text-muted);
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    transition: 0.2s;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ta a:hover, .ta a.active {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+}
+
 /* Guest Warning Banner */
 .guest-notice-banner {
     background-color: rgba(255, 174, 0, 0.1);
@@ -180,6 +264,7 @@ body {
     text-align: center;
 }
 
+/* Chat History List */
 #chatList {
     flex: 1;
     overflow-y: auto;
@@ -213,11 +298,6 @@ body {
     display: none;
 }
 
-.sidebar.collapsed .chat-item::before {
-    content: "💬";
-    font-size: 1rem;
-}
-
 .chat-item:hover, .chat-item.active {
     background-color: var(--bg-hover);
     color: var(--text-primary);
@@ -237,6 +317,7 @@ body {
     background-color: rgba(239, 68, 68, 0.2);
 }
 
+/* Sidebar Bottom Profile Bar & Popover Menu */
 .sidebar-bottom {
     margin-top: auto;
     border-top: 1px solid var(--border-color);
@@ -377,6 +458,14 @@ body {
     margin: 4px 0;
 }
 
+/* Main Content & Chat App Workspaces */
+.content {
+    flex: 1;
+    padding: 30px;
+    overflow-y: auto;
+    max-width: 900px;
+}
+
 .chat-app {
     flex: 1;
     display: flex;
@@ -454,6 +543,7 @@ body {
     padding-left: 0;
 }
 
+/* Topic Suggestion Cards */
 .topic-suggestions-container {
     max-width: 800px;
     width: 90%;
@@ -486,6 +576,7 @@ body {
 .topic-title { font-size: 0.85rem; font-weight: 600; color: var(--text-primary); }
 .topic-desc { font-size: 0.72rem; color: var(--text-muted); }
 
+/* Chat Input Bar */
 .chat-input {
     max-width: 800px;
     width: 90%;
@@ -534,6 +625,11 @@ body {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#sendBtn:hover {
+    background-color: var(--accent-hover);
 }
 
 .info {
@@ -543,6 +639,32 @@ body {
     margin-bottom: 12px;
 }
 
+/* UI Elements & Components (.code-box, .goal-box) */
+.code-box {
+    background: #0a1422;
+    color: #38bdf8;
+    padding: 15px;
+    border-radius: 8px;
+    font-family: monospace;
+    margin: 15px 0;
+    border: 1px solid var(--border-color);
+}
+
+.goal-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+.goal-box ul {
+    margin-left: 20px;
+    margin-top: 10px;
+    color: var(--text-muted);
+}
+
+/* Modals */
 .modal-overlay {
     position: fixed;
     top: 0; left: 0;
@@ -632,6 +754,7 @@ body {
     border-radius: 8px;
     padding: 8px 16px;
     cursor: pointer;
+    font-weight: 600;
 }
 
 .secondary-btn {
@@ -643,7 +766,7 @@ body {
     cursor: pointer;
 }
 
-/* Reload Animation Overlay Styles */
+/* Animations & Overlays */
 .reload-overlay {
     position: fixed;
     top: 0;
@@ -656,7 +779,6 @@ body {
     align-items: center;
     justify-content: center;
     z-index: 2000;
-    animation: fadeInOverlay 0.2s ease-out;
 }
 
 .reload-center-box {
@@ -685,269 +807,7 @@ body {
     100% { transform: rotate(360deg); }
 }
 
-@keyframes fadeInOverlay {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-/* ==========================================
-   Full Page Auth & SSO Styles (auth.html)
-   ========================================== */
-.auth-page-body {
-    background-color: var(--bg-main);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    padding: 20px;
-}
-
-.auth-card {
-    background-color: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 16px;
-    width: 100%;
-    max-width: 420px;
-    padding: 32px 28px;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.auth-header {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-}
-
-.auth-logo {
-    width: 48px;
-    height: 48px;
-    object-fit: contain;
-}
-
-.auth-header h2 {
-    font-size: 1.4rem;
-    font-weight: 700;
-}
-
-.auth-header p {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-}
-
-.sso-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.sso-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    width: 100%;
-    padding: 10px 14px;
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
-    background-color: var(--bg-hover);
-    color: var(--text-primary);
-    font-size: 0.875rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.2s, transform 0.1s;
-}
-
-.sso-btn:hover {
-    background-color: var(--border-color);
-    transform: translateY(-1px);
-}
-
-.auth-divider {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: var(--text-muted);
-    font-size: 0.75rem;
-}
-
-.auth-divider::before, .auth-divider::after {
-    content: '';
-    flex: 1;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.auth-divider span {
-    padding: 0 10px;
-}
-
-#authForm {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-.form-group label {
-    font-size: 0.8rem;
-    color: var(--text-muted);
-}
-
-.form-group input {
-    background-color: var(--bg-input);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 10px 12px;
-    color: var(--text-primary);
-    font-size: 0.9rem;
-    outline: none;
-}
-
-.form-group input:focus {
-    border-color: #5865f2;
-}
-
-@keyframes rainbowGlow {
-  0% { filter: hue-rotate(0deg); }
-  100% { filter: hue-rotate(360deg); }
-}
-
-.rainbow-name {
-  background: linear-gradient(45deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff);
-  background-size: 400% 400%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: rainbowGlow 4s linear infinite;
-  font-weight: bold;
-}
-
-/* 📱 Aveno Responsive Workspace Styles */
-
-/* Base layout adjustments for smaller screens */
-@media (max-width: 768px) {
-  /* Collapse sidebar automatically on mobile */
-  #avenoSidebar {
-    position: fixed;
-    left: -260px;
-    transition: left 0.3s ease;
-    z-index: 1000;
-  }
-  
-  #avenoSidebar.open {
-    left: 0;
-  }
-
-  /* Stack chat container and inputs cleanly */
-  .chat-container, chatBox {
-    padding: 8px;
-  }
-
-  /* Make topic cards stack vertically on small screens */
-  .topic-card-container, .topic-cards {
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  /* Adjust input bar padding for mobile keyboards */
-  .input-container, form {
-    flex-wrap: wrap;
-    padding: 8px;
-  }
-}
-
-/* 🎵 Music Canceled / Muted State Style */
-#headerMusicBtn.music-off {
-    opacity: 0.5;
-    filter: grayscale(100%);
-    position: relative;
-}
-
-#headerMusicBtn.music-off::after {
-    content: "✕";
-    position: absolute;
-    top: -4px;
-    right: -4px;
-    background: #ef4444;
-    color: #fff;
-    font-size: 0.65rem;
-    font-weight: bold;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#favicon {
-    user-select: none;
-}
-
-/* Ensure images and code wrappers never overflow container bounds */
-.message-content img {
-  max-width: 100% !important;
-  height: auto !important;
-}
-
-.aveno-code-wrapper {
-  max-width: 100%;
-  overflow-x: auto;
-  max-height: 400px;
-}
-
-/* ✨ Organic Message Fade-in & Typing Animation */
-@keyframes messageSlideIn {
-  from {
-    opacity: 0;
-    transform: translateY(12px) scale(0.98);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-.message {
-  animation: messageSlideIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-/* 💭 Breathing / Pulsing Typing Indicator */
-@keyframes pulseDot {
-  0%, 80%, 100% { transform: scale(0); opacity: 0.3; }
-  40% { transform: scale(1); opacity: 1; }
-}
-
-.typing-dots {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  padding: 4px 8px;
-}
-
-.typing-dots span {
-  width: 6px;
-  height: 6px;
-  background-color: var(--text-muted, #94a3b8);
-  border-radius: 50%;
-  animation: pulseDot 1.4s infinite ease-in-out both;
-}
-
-.typing-dots span:nth-child(1) { animation-delay: -0.32s; }
-.typing-dots span:nth-child(2) { animation-delay: -0.16s; }
-.typing-dots span:nth-child(3) { animation-delay: 0s; }
-
-/* 🎨 Modern Custom Scrollbar for Aveno Workspace */
-
-/* For WebKit Browsers (Chrome, Edge, Safari) */
+/* Custom Scrollbars */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -965,55 +825,5 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent, #3b82f6);
-}
-
-/* For Firefox */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: var(--border-color, #475569) var(--bg-card, #1e293b);
-}
-
-.auth-submit-btn {
-    background-color: var(--accent);
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    padding: 12px;
-    font-weight: 600;
-    font-size: 0.95rem;
-    cursor: pointer;
-    margin-top: 6px;
-    transition: background-color 0.2s;
-}
-
-.auth-submit-btn:hover {
-    background-color: var(--accent-hover);
-}
-
-.auth-footer {
-    text-align: center;
-    font-size: 0.85rem;
-    color: var(--text-muted);
-}
-
-.auth-footer a {
-    color: var(--accent);
-    text-decoration: none;
-    font-weight: 600;
-    margin-left: 4px;
-}
-
-.auth-footer a:hover {
-    text-decoration: underline;
-}
-
-.guest-link {
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    text-decoration: none;
-}
-
-.guest-link:hover {
-    color: var(--text-primary);
+  background: var(--accent, #ffae00);
 }
